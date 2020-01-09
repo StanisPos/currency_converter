@@ -1,0 +1,65 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "react-app",
+    "airbnb",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "rules": {
+    "indent": ["error", 4],
+    "react/jsx-indent" : ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "import/prefer-default-export": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "max-len": ["error", 120, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "array-callback-return": ["error", {"allowImplicit": true}],
+    "complexity": ["error", { "max": 10 }],
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/prefer-regexp-exec": "off",
+    "no-param-reassign": "off",
+    "comma-dangle": ["error", {
+      "functions": "never"
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "no-console": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+        ]
+      }
+    }
+  ]
+}
