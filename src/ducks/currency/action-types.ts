@@ -1,5 +1,9 @@
-export const GET_CURRENCIES_LIST = 'GET_CURRENCIES_LIST';
+import { setActionPrefix } from '../action-helpers';
 
-export const UPDATE_CURRENCIES_LIST = 'UPDATE_CURRENCIES_LIST';
+import { PREFIX_CURRENCY } from './constants';
 
-export const SET_BASE_CURRENCY = 'SET_BASE_CURRENCY';
+export const GET_CURRENCIES_LIST = setActionPrefix('GET_CURRENCIES_LIST', PREFIX_CURRENCY);
+
+export const UPDATE_CURRENCIES_LIST = setActionPrefix('UPDATE_CURRENCIES_LIST', PREFIX_CURRENCY);
+
+export const SET_BASE_CURRENCY = setActionPrefix('SET_BASE_CURRENCY', PREFIX_CURRENCY);
