@@ -1,4 +1,4 @@
-import { setActionPrefix } from '../action-helpers';
+import { setActionPrefix } from '../../helpers/action-helpers';
 
 import { PREFIX_CURRENCY } from './constants';
 

@@ -6,7 +6,9 @@ import { getCurrenciesList } from './ducks/currency/actions';
 import './App.scss';
 
 const App: React.FC = (props: any) => {
-    const handleClick = (): void => {
+    const handleClick = (e: any): void => {
+        e.preventDefault();
+
         props.test({
             asd: 1
         });
