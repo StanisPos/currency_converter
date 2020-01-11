@@ -11,4 +11,6 @@ interface CurrencyInterface {
 
 export interface CurrenciesListInterface {
     currencyList: Array<CurrencyInterface> | [];
+    baseCurrency: Object;
+    timeUpdateCurrency: string;
 }

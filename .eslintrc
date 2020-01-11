@@ -41,7 +41,8 @@
     "global-require": 0,
     "eslint linebreak-style": [0, "error", "windows"],
     "implicit-arrow-linebreak": [0],
-    "@typescript-eslint/no-explicit-any": 0
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/ban-types": [0]
   },
   "settings": {
     "import/resolver": {

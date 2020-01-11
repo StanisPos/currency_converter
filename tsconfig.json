@@ -6,7 +6,6 @@
     "target": "es6",
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "isolatedModules": true,
     "sourceMap": true,
     "jsx": "react",
     "skipLibCheck": true,
@@ -22,7 +21,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "src"
