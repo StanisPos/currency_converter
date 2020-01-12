@@ -1,13 +1,14 @@
 import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import Main from 'scenes/Main';
 
 import { getCurrenciesList } from './ducks/currency/actions';
 import './App.scss';
 
-const App: React.FC = (props: any) => {
+const App: any = (props: any) => {
     const handleClick = (e: any): void => {
-        e.preventDefault();
+        e.domEvent.preventDefault();
 
         props.test({
             asd: 1
@@ -15,23 +16,7 @@ const App: React.FC = (props: any) => {
     };
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={handleClick}
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <Main actionClick={handleClick} />
     );
 };
 
