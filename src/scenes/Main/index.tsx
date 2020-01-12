@@ -1,11 +1,13 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
+import SwitcherLanguage from 'components/SwitcherLanguage';
 
 const { Header, Content, Footer } = Layout;
 
 const Main: any = (props: any) => {
-    const { actionClick } = props;
+    const { actionClick, text } = props;
+
     return (
         <Layout className="layout">
             <Header>
@@ -19,8 +21,10 @@ const Main: any = (props: any) => {
                     <Menu.Item key="1">Конвертер валют</Menu.Item>
                     <Menu.Item key="2" onClick={actionClick}>Котировки валют</Menu.Item>
                 </Menu>
+                <SwitcherLanguage />
             </Header>
             <Content style={{ padding: '0 50px' }}>
+                <span>{text}</span>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>List</Breadcrumb.Item>
