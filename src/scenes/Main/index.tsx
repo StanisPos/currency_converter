@@ -5,7 +5,7 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer } = Layout;
 
 const Main: any = (props: any) => {
-    const { actionClick } = props;
+    const { actionClick, text } = props;
     return (
         <Layout className="layout">
             <Header>
@@ -21,6 +21,7 @@ const Main: any = (props: any) => {
                 </Menu>
             </Header>
             <Content style={{ padding: '0 50px' }}>
+                <span>{text}</span>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>List</Breadcrumb.Item>

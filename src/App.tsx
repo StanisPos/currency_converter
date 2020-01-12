@@ -1,6 +1,8 @@
 import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 import Main from 'scenes/Main';
 
 import { getCurrenciesList } from './ducks/currency/actions';
@@ -15,8 +17,15 @@ const App: any = (props: any) => {
         });
     };
 
+    const { t } = useTranslation('translation');
+    const test = t('translation:yes');
+
+    setTimeout(() => {
+        i18next.changeLanguage('en');
+    }, 3000);
+
     return (
-        <Main actionClick={handleClick} />
+        <Main text={test} actionClick={handleClick} />
     );
 };
 
@@ -26,4 +35,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => (
     }, dispatch)
 );
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(React.memo(App));
