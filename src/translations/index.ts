@@ -5,9 +5,10 @@ import en from './en';
 const i18nextConfig = {
     fallbackLng: 'ru',
     ns: [
-        'translation'
+        'headers',
+        'currencies'
     ],
-    defaultNS: 'translation',
+    defaultNS: 'headers',
     resources: {
         ru,
         en

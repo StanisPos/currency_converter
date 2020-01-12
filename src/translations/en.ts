@@ -1,7 +1,14 @@
+import { CURRENCIES, HEADERS } from './constants';
+
 const en = {
-    translation: {
+    [HEADERS]: {
         yes: 'Yes',
         no: 'No'
+    },
+
+    [CURRENCIES]: {
+        converter: 'Currency Converter',
+        quote: 'Currency Quotes'
     }
 };
 

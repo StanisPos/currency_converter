@@ -1,5 +1,6 @@
 {
   "compileOnSave": false,
+  "suppressImplicitAnyIndexErrors": true,
   "compilerOptions": {
     "module": "esnext",
     "esModuleInterop": true,

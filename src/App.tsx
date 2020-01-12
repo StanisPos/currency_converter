@@ -1,14 +1,16 @@
 import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import Main from 'scenes/Main';
 
 import { getCurrenciesList } from './ducks/currency/actions';
+import { HEADERS } from './translations/constants';
 import './App.scss';
 
 const App: any = (props: any) => {
+    const { t } = useTranslation(HEADERS);
+
     const handleClick = (e: any): void => {
         e.domEvent.preventDefault();
 
@@ -17,15 +19,9 @@ const App: any = (props: any) => {
         });
     };
 
-    const { t } = useTranslation('translation');
-    const test = t('translation:yes');
-
-    setTimeout(() => {
-        i18next.changeLanguage('en');
-    }, 3000);
 
     return (
-        <Main text={test} actionClick={handleClick} />
+        <Main text={t('no')} actionClick={handleClick} />
     );
 };
 

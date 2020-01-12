@@ -1,7 +1,14 @@
+import { CURRENCIES, HEADERS } from './constants';
+
 const ru = {
-    translation: {
+    [HEADERS]: {
         yes: 'Да',
         no: 'Нет'
+    },
+
+    [CURRENCIES]: {
+        converter: 'Конвертер валют',
+        quote: 'Котировки валют'
     }
 };
 
