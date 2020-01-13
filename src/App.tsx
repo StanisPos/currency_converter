@@ -7,6 +7,7 @@ import Main from 'scenes/Main';
 import { getCurrenciesList } from './ducks/currency/actions';
 import { HEADERS } from './translations/constants';
 import './App.scss';
+import { requests } from './services/api';
 
 const App: any = (props: any) => {
     const { t } = useTranslation(HEADERS);
@@ -18,6 +19,18 @@ const App: any = (props: any) => {
             asd: 1
         });
     };
+
+    setTimeout(() => {
+        requests.getCurrencies().then((res) => console.log(res));
+    }, 5000);
+
+    setTimeout(() => {
+        requests.getPreviousData({
+            day: '30',
+            month: '5',
+            year: '2019'
+        }).then((res) => console.log(res));
+    }, 10000);
 
 
     return (
