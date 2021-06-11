@@ -1,0 +1,29 @@
+extends:
+  - stylelint-config-standard
+  - stylelint-config-css-modules
+  - stylelint-config-prettier
+ignoreFiles: "**/*.{js,jsx}"
+rules:
+  media-feature-name-no-unknown:
+    - true
+    - ignoreMediaFeatureNames: /^@(mobile|tablet|desktop|desktop2k|desktop4k)-(min|max)$/
+  function-calc-no-invalid: null # throw error with less calc(~"100% - 100px") syntax
+  font-family-name-quotes: always-where-recommended
+  function-url-quotes: always
+  string-quotes: single
+  selector-attribute-quotes: always
+  at-rule-no-vendor-prefix: true
+  media-feature-name-no-vendor-prefix: true
+  property-no-vendor-prefix: true
+  selector-no-vendor-prefix: true
+  value-no-vendor-prefix: true
+  max-nesting-depth:
+    - 3
+    - ignore: ["pseudo-classes", "blockless-at-rules"]
+  selector-max-compound-selectors: 5
+  selector-max-specificity: "0,5,5"
+  # others
+  declaration-no-important: true
+  function-url-scheme-blacklist: ["/^data/"]
+  selector-max-universal: 0
+  max-line-length: 100
