@@ -10,18 +10,16 @@ module.exports = {
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
 		'plugin:promise/recommended',
-		'plugin:sonarjs/recommended',
-		'plugin:@typescript-eslint/eslint-recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:@typescript-eslint/recommended-requiring-type-checking',
-		'prettier',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: 'tsconfig.json',
 		sourceType: 'module',
 	},
-	plugins: ['react', 'react-hooks', 'promise', 'sonarjs', 'jsdoc', 'import', '@typescript-eslint'],
+	plugins: ['react', 'react-hooks', 'promise', 'import'],
 	rules: {
 		'@typescript-eslint/await-thenable': 'warn', // TODO: enable
 		'@typescript-eslint/comma-dangle': [
@@ -110,7 +108,7 @@ module.exports = {
 			},
 		], // TODO enable
 		'@typescript-eslint/return-await': 'warn', // TODO enable
-		'@typescript-eslint/semi': ['error', 'always'],
+		'@typescript-eslint/semi': ['warn', 'always'],
 		'@typescript-eslint/typedef': ['error', { parameter: true }],
 		'@typescript-eslint/type-annotation-spacing': 'error',
 		'@typescript-eslint/unbound-method': 'off',
@@ -148,12 +146,12 @@ module.exports = {
 		],
 		'id-match': 'error',
 		'implicit-arrow-linebreak': 'off',
-		'import/no-unassigned-import': ['error', { allow: ['core-js/stable', 'moment/locale/ru'] }],
+		'import/no-unassigned-import': ['warn', { allow: ['core-js/stable', 'moment/locale/ru'] }],
 		'import/extensions': 'off', // cause too slow
 		'import/no-named-as-default-member': 'off', // cause too slow
 		'@typescript-eslint/no-implied-eval': 'off', // cause too slow
 		'import/order': [
-			'error',
+			'warn',
 			{
 				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'unknown'],
 				// works via minimatch lib https://www.npmjs.com/package/minimatch
@@ -193,9 +191,6 @@ module.exports = {
 			},
 		],
 		'import/prefer-default-export': ['off'],
-		'jsdoc/check-alignment': 'error',
-		'jsdoc/check-indentation': 'off',
-		'jsdoc/newline-after-description': 'error',
 		'jsx-a11y/anchor-is-valid': 'warn', // TODO: enable
 		'jsx-a11y/no-noninteractive-element-interactions': 'warn', // TODO: remove this line after fixing errors
 		'jsx-a11y/interactive-supports-focus': 'warn',
@@ -228,7 +223,7 @@ module.exports = {
 		'no-extra-boolean-cast': 'warn', // TODO: enable
 		'no-caller': 'error',
 		'no-cond-assign': 'error',
-		'no-console': 'error',
+		'no-console': 'warn',
 		'no-debugger': 'error',
 		'no-duplicate-case': 'error',
 		'no-duplicate-imports': 'error',
@@ -301,7 +296,6 @@ module.exports = {
 		'react/jsx-props-no-spreading': 'off',
 		'react/require-default-props': 0,
 		'react/sort-comp': 'warn',
-		'sonarjs/cognitive-complexity': 'warn', // TODO: enable
 		'space-before-function-paren': [
 			'error',
 			{
@@ -317,16 +311,5 @@ module.exports = {
 				markers: ['/'],
 			},
 		],
-	},
-	settings: {
-		'import/parsers': {
-			'@typescript-eslint/parser': ['.ts', '.tsx'],
-		},
-		'import/internal-regex': '@openbank/',
-		'import/resolver': {
-			typescript: {
-				alwaysTryTypes: true,
-			},
-		},
 	},
 };
