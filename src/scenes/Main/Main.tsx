@@ -1,26 +1,39 @@
 import * as React from 'react';
-import { AppBar, IconButton, InputBase, Toolbar, Typography } from '@material-ui/core';
-import * as Icons from '@material-ui/icons';
+
+import { makeStyles } from '@material-ui/core';
+import { Content } from 'components/Content';
+
+import { NavBar } from '../../components/NavBar';
+import { StyledDrawer } from '../../components/StyledDrawer';
 
 type Props = {
   testId?: string;
 };
 
-const Main: React.FC<Props> = (props) => (
-  <AppBar position="static">
-    <Toolbar>
-      <IconButton edge="start" aria-label="open drawer">
-        <Icons.Menu />
-      </IconButton>
-      <Typography variant="h2" noWrap>
-        Currency Converter
-      </Typography>
-      <div>
-        <Icons.Search />
-        <InputBase placeholder="Search..." inputProps={{ 'aria-label': 'search' }} />
-      </div>
-    </Toolbar>
-  </AppBar>
-);
+const useStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+  },
+}));
 
+const Main: React.FC<Props> = () => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div className={classes.root}>
+      <NavBar isMenuOpen={open} handleDrawerOpen={handleDrawerOpen} />
+      <StyledDrawer isMenuOpen={open} handleDrawerClose={handleDrawerClose} />
+      <Content />
+    </div>
+  );
+};
 export default React.memo(Main);
